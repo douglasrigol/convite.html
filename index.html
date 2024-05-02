@@ -5,7 +5,146 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="arquivos.in/index.css" media="screen"/> 
         <title>Convite</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Lobster&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 12px;
+    font-family: 'Francois One', sans-serif;
+}
+
+#container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-image: url(https://i.pinimg.com/originals/c7/a0/00/c7a000d6a4257106c5336468c7f5817a.jpg);
+    position: relative;
+    float: right;
+}
+#container::after{
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0.0;
+}
+
+#card{
+    max-width: 370px;
+    width: 85vw;
+    height: 90vh;
+    min-height: 740px;
+    background-color: silver;
+    z-index: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+
+#logo{
+    margin-top: 50px;
+    font-size: 4rem;
+    color: #EFB935;
+    width: 90%;
+    height: 38%;
+    border-radius: 40% 60% 20% 80% / 77% 80% 20% 23%;
+    background-image: linear-gradient(90deg, #3e3e3e, #979390);
+    box-shadow: 5px 5px 10px 1px #202020;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#douglas{
+    font-size: 5rem;
+    color: black;
+    border-bottom: 3px solid #efefef;
+}
+#midle-message{
+    width: 90%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#midle-message div{
+    display: flex;
+    align-items: center;
+    background-image: url(https://i.pinimg.com/originals/c7/a0/00/c7a000d6a4257106c5336468c7f5817a.jpg);
+    position:relative;
+    float: right;
+    z-index: 1000;
+}
+#midle-message div::after{
+    content: '';
+    position: absolute;
+    background-color: #3e3e3e;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+#midle-message div:first-child{
+    width: 100%;
+    height: 60%;
+    text-align: justify;
+}
+#midle-message div:nth-child(2){
+    width: 100%;
+    height: 30%;
+}
+#convidado{
+    color: #ead02b;
+    font-weight: bolder;
+}
+#idade{
+    display: flex;
+    justify-content: center;
+    
+}
+#idade p{
+    color: black;
+    filter: drop-shadow(3px 3px 2px #5f5f5f);
+    font-size: 2.4rem;
+    line-height: 1.8rem;
+}
+#idade #douglas-2{
+    font-size: 2.5rem;
+    padding: 0 10px;
+    border-right: 2px solid #909090;
+}
+
+#text{
+    font-size: 1.2rem;
+    color: black;
+    /*border-bottom: 1px solid #909090;*/
+    
+}
+#convite{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 25%;
+    color: black;
+}
+#convite p:nth-child(3){
+    text-align: center;
+}
+        </style>
     </head>
+    
     <body id="container">
         <main id="card">
 
@@ -32,7 +171,14 @@
                 A gueixa cozinha oriental</p>
             </section>
         </main>
+<script>
+    const convidado = prompt('Digite seu nome: ');
 
-        <script src="arquivos.js/index.js"></script>
+convidado.length >= 3 ?
+document.getElementById('convidado').innerHTML = convidado.charAt(0).toUpperCase() + convidado.slice(1, 50)
+: alert('Seu nome precisa ter mais de 3 ou mais caracteres') ? false : location.reload();
+    
+</script>
+        
     </body>
 </html>
